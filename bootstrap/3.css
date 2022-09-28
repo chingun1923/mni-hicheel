@@ -7,15 +7,17 @@ body {
 }
 
 .background {
-  background-color: rgb(100, 8, 8);
+  background-color: red;
   width: 20%;
   height: 100vw;
+  border: 10px solid yellow;
 }
 
 .background2 {
-  background-color: rgb(189, 69, 69);
+  background-color: aqua;
   width: 80%;
   height: 100vw;
+  border: 10px solid rgba(185, 185, 185, 0.877);
 }
 
 .backgrounall {
@@ -96,13 +98,13 @@ body {
   color: aqua;
   margin-bottom: 20px;
   animation-name: item2;
-  animation-duration: 2s;
+  animation-duration: 1s;
   animation-timing-function: linear;
 }
 
 @keyframes item2 {
   0% {
-    color: rgb(100, 8, 8);
+    color: red;
     margin-bottom: 40px
   }
 
@@ -126,17 +128,10 @@ body {
 
 @keyframes item3 {
   0% {
-    color: rgb(100, 8, 8);
-    margin-bottom: 40px;
+    color: red;
   }
-
-  75% {
-    color: aqua;
-    margin-bottom: 30px;
-  }
-
   100% {
-    margin-bottom: 20px;
+    color: cyan;
   }
 }
 
@@ -158,34 +153,49 @@ body {
   transform: rotate(45deg);
   margin-top: -3px;
 }
-.item1 { grid-area: header1;
-         height: max-content;
-        width: max-content;
-      margin-left: 10px; }
-.item2 { grid-area: header2;
-  height: max-content;
-  width: max-content; }
-.item3 { grid-area: right;
-  height: max-content;
-  width: max-content; }
-.item4 { grid-area: main2;
-  height: max-content;
-  width: max-content; }
-.item5 { grid-area: footer;
-  height: max-content;
-  width: max-content; }
-.item6 { grid-area: footer2; 
-  height: max-content;
-  width: max-content;}
+.item1{
+  grid-area: header;
+  box-shadow: 1px 1px red;
+  transition: box-shadow 0.5s;
+}
+img {
+  box-shadow: 1px 1px red;
+  transition: box-shadow 0.5s;
+}
+img:hover {
+  box-shadow: 5px 10px rgba(185, 185, 185, 0.877);
+}
+.item2 {
+  grid-area: menu;
+}
+
+.item3 {
+  grid-area: main;
+}
+
+.item4 {
+  grid-area: right;
+}
+
+.item5 {
+  grid-area: footer;
+}
+.item6 {
+  grid-area: left;
+}
 
 .grid-container {
   display: grid;
   grid-template-areas:
-    'header1 header1 header1 header2 header2 header2'
-    'right right right main2 main2 main2'
-    'footer footer footer footer footer2 footer2';
+    'header header header header right right'
+    'menu menu menu main right right'
+    'footer footer footer footer left left';
+  gap: 10px;
+  background-color: rgba(185, 185, 185, 0.877);
 }
-.grid-container > div {
+
+.grid-container>div {
+  background-color: red;
   text-align: center;
-  padding: 20px 0;
-}
+  font-size: 30px;
+} 

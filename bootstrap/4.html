@@ -1,0 +1,45 @@
+<!DOCTYPE HTML>
+
+<html>
+
+<head>
+	<meta http-equiv="Content-Type"
+		content="text/html; charset=UTF-8" />
+	
+</head>
+	
+<body>
+
+
+
+
+    <div style="display: flex; flex-direction: row;">
+		<div style="display: flex; flex-direction: row;">			
+			<button onclick="increment()" style="margin-left: 3vw">+</button>
+			<div style="margin-left: 3vw"; id="counting"></div>
+			<button onclick="decrement()" style="margin-left: 3vw">-</button>		
+		</div>  
+    </div>
+
+
+
+
+
+        <script>
+var data = 0;
+document.getElementById("counting").innerText = data;
+
+function increment() {
+	data = data + 1;
+	document.getElementById("counting").innerText = data;
+}
+
+function decrement() {
+	data = data - 1;
+	document.getElementById("counting").innerText = data;
+}
+        </script>
+</body>
+
+</html>
+ 
